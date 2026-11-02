@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "voice_id": "eve-egy-001-noura",
+  "locale": "ar-EG",
+  "review_required": "native Cairo Arabic speaker",
+  "cases": [
+    {"id":"N01","category":"greeting","text":"أهلا بيكي، عاملة إيه النهارده؟"},
+    {"id":"N02","category":"warm_explanation","text":"خلينا ناخد الموضوع واحدة واحدة ومن غير استعجال."},
+    {"id":"N03","category":"question","text":"تحبي نبدأ بأنهي اختيار؟"},
+    {"id":"N04","category":"colloquial_present","text":"إحنا بنراجع التفاصيل قبل ما نحدد المعاد."},
+    {"id":"N05","category":"feminine_agreement","text":"إنتي تقدري تختاري الوقت اللي يناسبك."},
+    {"id":"N06","category":"negation","text":"مش لازم تاخدي قرار دلوقتي."},
+    {"id":"N07","category":"imperative","text":"ابعتي لنا رسالة واسألي عن التفاصيل."},
+    {"id":"N08","category":"word_endings","text":"خدي وقتك، واسمعي الكلام للآخر."},
+    {"id":"N09","category":"price","text":"السعر تمنمية وخمسين جنيه."},
+    {"id":"N10","category":"percentage","text":"الخصم خمسة وعشرين في المية."},
+    {"id":"N11","category":"number","text":"عندنا تلات مراحل للمراجعة."},
+    {"id":"N12","category":"date","text":"ميعادك يوم خمسة نوفمبر الساعة ستة."},
+    {"id":"N13","category":"phone","text":"رقم التواصل صفر عشرة واحد اتنين تلاتة أربعة خمسة ستة سبعة."},
+    {"id":"N14","category":"loanword","text":"هنبعتلك التفاصيل على واتساب."},
+    {"id":"N15","category":"brand_name","text":"خلينا نتأكد من نطق اسم البراند قبل التسجيل."},
+    {"id":"N16","category":"medical_term","text":"اسألي المختص عن تفاصيل الإجراء ومناسبته ليكي."},
+    {"id":"N17","category":"long_form","text":"المهم إن كل خطوة تبقى واضحة، وإنك تسألي عن أي تفصيلة قبل ما تختاري."},
+    {"id":"N18","category":"emphasis","text":"استني ثانية، في نقطة مهمة لازم نوضحها."},
+    {"id":"N19","category":"calm_reassurance","text":"مفيش داعي للقلق، هنشرحلك كل حاجة بهدوء."},
+    {"id":"N20","category":"cta","text":"احجزي معادك دلوقتي، وفريقنا هيرد عليكي."}
+  ],
+  "scoring": {
+    "scale": "1-5",
+    "dimensions": ["pronunciation","Cairo_dialect_naturalness","prosody","intelligibility","voice_consistency"],
+    "block_release_on": ["wrong_price_or_number","changed_negation_or_meaning","unapproved_identity_or_consent","unresolved_medical_term"]
+  }
+}

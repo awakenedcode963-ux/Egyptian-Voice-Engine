@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "voice_id": "eve-egy-001-noura",
+  "locale": "ar-EG",
+  "custom_replacements": {},
+  "review_queue": [
+    {"written_form": "نورا", "note": "Confirm preferred reading with the voice actor and reviewer."},
+    {"written_form": "هيدرافيشل", "note": "Add a phonetic spelling only after listening to a model render."},
+    {"written_form": "الديرمابن", "note": "Add a phonetic spelling only after native-speaker approval."}
+  ],
+  "policy": "Never alter names, brands, medical terms or prices automatically without checking the resulting pronunciation."
+}

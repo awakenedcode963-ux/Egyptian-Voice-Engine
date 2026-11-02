@@ -27,6 +27,12 @@ After a speaker has explicitly authorized synthetic and commercial use, update a
 
 The consent gate blocks generation until permission is documented. Never bypass it for convenience.
 
+## First voice preparation
+- Profile: voices/voice-001-noura-cairo-feminine/profile.json
+- Recording direction and spoken script: voices/voice-001-noura-cairo-feminine/recording_script.md
+- Per-voice pronunciation override file: voices/voice-001-noura-cairo-feminine/pronunciation_lexicon.json
+- Fixed review suite: evaluation/noura_acceptance_script.json
+
 ## Current status
 - Multi-voice layout, profile schema, Egyptian normalizer, NAMAA and Habibi adapters, audio mastering, provenance, CI and offline tests: included.
 - First voice profile: defined; awaiting an authorized voice-actor recording and native Cairo acceptance tests.
