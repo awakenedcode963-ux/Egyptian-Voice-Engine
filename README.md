@@ -13,18 +13,18 @@ A reusable multi-voice foundation and first voice profile: **Noura — Cairo Fem
 - Each generated file receives a provenance manifest and human listening approval.
 
 ## Setup
-\`\`\`bash
-pip install -e ".[dev]"
-pytest -q
-eve normalize "850 ج وخصم 25%"
-\`\`\`
+    pip install -e ".[dev]"
+    pytest -q
+    eve normalize "850 ج وخصم 25%"
 
-Install the optional NAMAA backend with \`pip install -e ".[namaa]"\`.
+Install the optional NAMAA backend with:
+
+    pip install -e ".[namaa]"
 
 After a speaker has explicitly authorized synthetic and commercial use, update a private working copy of the voice profile and run:
-\`\`\`bash
-eve generate --profile voices/voice-001-noura-cairo-feminine/profile.json --reference-audio /secure/reference.wav --text "أهلا بيكي" --output outputs/noura.wav --device cuda
-\`\`\`
+
+    eve generate --profile voices/voice-001-noura-cairo-feminine/profile.json --reference-audio /secure/reference.wav --text "أهلا بيكي" --output outputs/noura.wav --device cuda
+
 The consent gate blocks generation until permission is documented. Never bypass it for convenience.
 
 ## Current status
