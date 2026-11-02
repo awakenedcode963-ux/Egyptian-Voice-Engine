@@ -1,51 +1,25 @@
 # Egyptian Voice Engine
 
-Open, modular toolkit for building, evaluating and delivering Egyptian Arabic synthetic voices.
+Modular toolkit for Egyptian Arabic synthetic voices.
 
-## First milestone
-A reusable multi-voice foundation and first voice profile: **Noura — Cairo Feminine** (working name). This is an original fictional voice direction, not an imitation of ChatGPT Sol or another real person. The profile is a specification; it is not yet a trained, quality-approved voice asset.
+## First runnable backend: NAMAA Egyptian TTS
+The first backend is NAMAA-Space/NAMAA-Egyptian-TTS, based on Chatterbox Multilingual. It supports Egyptian Arabic and a built-in voice, plus optional authorized reference-audio prompting.
 
-## Principles
-- Voice identity and delivery settings live in per-voice profiles; engine code is shared.
-- Speaker recordings require explicit permission for synthetic generation and commercial usage.
-- Model code, weights, datasets, speaker rights and output rights are reviewed independently.
-- Egyptian text normalization is conservative and requires native-speaker review.
-- Each generated file receives a provenance manifest and human listening approval.
+### Free first test
+Open notebooks/NAMAA_Kaggle_Quickstart.ipynb. Choose a free GPU accelerator if available, run all cells, and listen to the WAV output. Kaggle controls GPU availability and quotas; they can vary. Model weights are publicly available under the model card's stated MIT license.
 
-## Setup
-    pip install -e ".[dev]"
-    pytest -q
-    eve normalize "850 ج وخصم 25%"
-
-Install the optional NAMAA backend with:
-
+### Local install
     pip install -e ".[namaa]"
+    python scripts/namaa_smoke_test.py --text "أهلا بيكي، عاملة إيه النهارده؟" --output outputs/namaa_default_voice.wav --device cuda
 
-After a speaker has explicitly authorized synthetic and commercial use, update a private working copy of the voice profile and run:
+CPU is supported by the upstream model but can be very slow.
 
-    eve generate --profile voices/voice-001-noura-cairo-feminine/profile.json --reference-audio /secure/reference.wav --text "أهلا بيكي" --output outputs/noura.wav --device cuda
+### Reference voice
+Only use a recording when its speaker explicitly agreed to synthetic generation and intended commercial use. Keep recordings and consent evidence private. The main engine's reference-voice workflow remains consent-gated.
 
-The consent gate blocks generation until permission is documented. Never bypass it for convenience.
+## Quality and rights
+The NAMAA model card declares MIT and commercial use with attribution. Review the exact model revision, base Chatterbox dependency and package terms before production. The model card warns of possible errors in ق, numbers and text/audio consistency. Native Egyptian listening QA is mandatory.
 
-## First voice preparation
-- Profile: voices/voice-001-noura-cairo-feminine/profile.json
-- Recording direction and spoken script: voices/voice-001-noura-cairo-feminine/recording_script.md
-- Per-voice pronunciation override file: voices/voice-001-noura-cairo-feminine/pronunciation_lexicon.json
-- Fixed review suite: evaluation/noura_acceptance_script.json
+The repository MIT license covers only original project code. It does not grant rights to a speaker's voice or unrelated datasets. Do not claim this is a clone of ChatGPT's Sol. Noura is an original voice direction, not a trained voice identity.
 
-## Current status
-- Multi-voice layout, profile schema, Egyptian normalizer, NAMAA and Habibi adapters, audio mastering, provenance, CI and offline tests: included.
-- First voice profile: defined; awaiting an authorized voice-actor recording and native Cairo acceptance tests.
-- GPU inference and listening QA: not validated in this repository delivery.
-- Commercial release: not approved until all gates in docs/COMMERCIAL_READINESS.md pass.
-
-## Commercial and licensing warning
-This repository's MIT license applies only to original code here. It does not license upstream model weights, datasets, reference voices or generated content. NAMAA's model card declares MIT, but exact revisions, dependencies and artifact terms still need review. The MAdel121 Egyptian F5 checkpoint is marked CC BY-NC 4.0 and is excluded from commercial use absent separate permission. See docs/MODEL_AND_LICENSES.md.
-
-## Audio delivery
-Default WAV PCM 24-bit / 48 kHz and -14 LUFS integrated for web/social use. This is not EBU R128 broadcast compliance; broadcast programmes commonly target -23 LUFS. The included peak guard is sample-peak, not true-peak limiting.
-
-## Add another voice
-Add a profile directory, a unique voice_id, a registry entry, pronunciation overrides and evaluation results. Reuse the same runtime; do not fork it per speaker.
-
-See docs/ARCHITECTURE.md, docs/VOICE_DATA_POLICY.md, docs/COMMERCIAL_READINESS.md and CONTRIBUTING.md.
+See docs/NAMAA_SETUP.md, docs/MODEL_AND_LICENSES.md, docs/COMMERCIAL_READINESS.md and docs/VOICE_DATA_POLICY.md.
