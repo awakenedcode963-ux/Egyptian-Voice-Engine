@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "egyptian-voice-engine"
+version = "0.1.0"
+description = "Modular Egyptian Arabic multi-voice TTS toolkit"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["numpy>=1.24", "scipy>=1.10", "soundfile>=0.12", "pyloudnorm>=0.1.1"]
+
+[project.optional-dependencies]
+namaa = ["chatterbox-tts", "huggingface_hub>=0.23", "safetensors>=0.4", "torchaudio"]
+habibi = ["habibi-tts>=0.1.1"]
+dev = ["pytest>=8", "ruff>=0.5"]
+all = ["chatterbox-tts", "huggingface_hub>=0.23", "safetensors>=0.4", "torchaudio", "habibi-tts>=0.1.1"]
+
+[project.scripts]
+eve = "egyptian_voice_engine.cli:main"
+eve-normalize = "egyptian_voice_engine.text.normalizer:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

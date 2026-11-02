@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "voice_id": "eve-egy-001-noura",
+  "display_name": "Noura — Cairo Feminine",
+  "status": "profile_design_pending_voice_actor_and_acceptance",
+  "locale": "ar-EG",
+  "dialect": "Cairo Egyptian colloquial Arabic",
+  "gender_presentation": "feminine",
+  "style_description": "Original fictional voice direction: warm, clear, contemporary Cairo feminine speech; friendly and confident, not overly theatrical.",
+  "intended_use": ["commercial_explainers", "customer_support", "social_media_campaigns"],
+  "backend": "namaa_chatterbox",
+  "model_id": "NAMAA-Space/NAMAA-Egyptian-TTS",
+  "model_revision": "main",
+  "backend_options": {"language_id": "ar", "exaggeration": 0.5, "cfg_weight": 0.5},
+  "reference": {
+    "local_path": null,
+    "transcript": null,
+    "consent_status": "not_provided",
+    "consent_record_id": null,
+    "consent_scope": "Must cover synthetic generation, commercial channels, territories and retention; evidence remains private."
+  },
+  "text": {"voice_gender": "feminine", "normalize_egyptian": true, "custom_replacements": {}},
+  "audio": {"sample_rate": 48000, "channels": 1, "format": "WAV PCM 24-bit", "target_lufs": -14.0},
+  "acceptance": {"native_cairo_reviewer_required": true, "listening_review_required": true, "commercial_release_approved": false}
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "project": "Egyptian Voice Engine",
+  "voices": [
+    {
+      "voice_id": "eve-egy-001-noura",
+      "display_name": "Noura — Cairo Feminine",
+      "profile_path": "voices/voice-001-noura-cairo-feminine/profile.json",
+      "status": "profile_design_pending_voice_actor_and_acceptance"
+    }
+  ]
+}

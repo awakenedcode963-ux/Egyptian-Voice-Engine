@@ -1,0 +1,8 @@
+{
+  "voice_gender": "feminine",
+  "convert_numbers": true,
+  "strip_diacritics": true,
+  "colloquialize_common_phrases": true,
+  "preserve_phone_numbers": true,
+  "custom_replacements": {}
+}
