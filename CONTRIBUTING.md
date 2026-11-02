@@ -6,11 +6,10 @@
 - Pin model revisions and package versions for release candidates.
 - Include tests, GPU-run evidence, licensing impact, privacy impact and known limitations in pull requests.
 
-Before a PR:
-\`\`\`bash
-pip install -e ".[dev]"
-ruff check .
-pytest -q
-\`\`\`
+Before a PR, run:
+
+    pip install -e ".[dev]"
+    ruff check .
+    pytest -q
 
 New voices require a unique ID, documented consent for synthetic/commercial usage, native Egyptian review, acceptance tests and independent rights checks.
