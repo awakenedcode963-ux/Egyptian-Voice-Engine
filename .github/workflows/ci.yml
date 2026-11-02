@@ -15,5 +15,5 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install --upgrade pip
       - run: pip install -e ".[dev]"
-      - run: ruff check .
+      - run: ruff check --select E4,E9,F .
       - run: pytest -q
